@@ -1,0 +1,15 @@
+F:\Documents\Programming\HexBaron\HexBaronCS\HexBaronCS\bin\Debug\HexBaronCS.exe.config
+F:\Documents\Programming\HexBaron\HexBaronCS\HexBaronCS\bin\Debug\HexBaronCS.exe
+F:\Documents\Programming\HexBaron\HexBaronCS\HexBaronCS\bin\Debug\HexBaronCS.pdb
+F:\Documents\Programming\HexBaron\HexBaronCS\HexBaronCS\obj\Debug\HexBaronCS.csproj.AssemblyReference.cache
+F:\Documents\Programming\HexBaron\HexBaronCS\HexBaronCS\obj\Debug\HexBaronCS.csproj.CoreCompileInputs.cache
+F:\Documents\Programming\HexBaron\HexBaronCS\HexBaronCS\obj\Debug\HexBaronCS.exe
+F:\Documents\Programming\HexBaron\HexBaronCS\HexBaronCS\obj\Debug\HexBaronCS.pdb
+F:\Documents\Programming\HexBaron\Task 3\HexBaronCS\bin\Debug\HexBaronCS.exe.config
+F:\Documents\Programming\HexBaron\Task 3\HexBaronCS\bin\Debug\HexBaronCS.exe
+F:\Documents\Programming\HexBaron\Task 3\HexBaronCS\bin\Debug\HexBaronCS.pdb
+F:\Documents\Programming\HexBaron\Task 3\HexBaronCS\obj\Debug\HexBaronCS.csproj.AssemblyReference.cache
+F:\Documents\Programming\HexBaron\Task 3\HexBaronCS\obj\Debug\HexBaronCS.exe.config
+F:\Documents\Programming\HexBaron\Task 3\HexBaronCS\obj\Debug\HexBaronCS.csproj.CoreCompileInputs.cache
+F:\Documents\Programming\HexBaron\Task 3\HexBaronCS\obj\Debug\HexBaronCS.exe
+F:\Documents\Programming\HexBaron\Task 3\HexBaronCS\obj\Debug\HexBaronCS.pdb
