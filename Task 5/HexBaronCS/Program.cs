@@ -202,7 +202,15 @@ namespace HexBaronCS
                 for (int count = 1; count <= 3; count++)
                 {
                     Console.Write("Enter command: ");
-                    commands.Add(Console.ReadLine().ToLower());
+                    string command = Console.ReadLine().ToLower();
+                    while (command == "hexes")
+                    {
+                        Console.WriteLine(grid.GetGridAsIndices(player1Turn));
+                        command = Console.ReadLine().ToLower();
+                    }
+
+                    commands.Add(command);
+                    
                 }
                 foreach (var c in commands)
                 {
@@ -860,6 +868,22 @@ namespace HexBaronCS
             return gridAsString + CreateBottomLine();
         }
 
+        public string GetGridAsIndices(bool p1Turn)
+        {
+            int listPositionOfTile = 0;
+            player1Turn = p1Turn;
+            string gridAsString = CreateTopLine() + CreateEvenLineIndeces(true, ref listPositionOfTile);
+            listPositionOfTile += 1;
+            gridAsString += CreateOddLineIndeces(ref listPositionOfTile);
+            for (var count = 1; count <= size - 2; count += 2)
+            {
+                listPositionOfTile += 1;
+                gridAsString += CreateEvenLineIndeces(false, ref listPositionOfTile);
+                listPositionOfTile += 1;
+                gridAsString += CreateOddLineIndeces(ref listPositionOfTile);
+            }
+            return gridAsString + CreateBottomLine();
+        }
         private void MovePiece(int newIndex, int oldIndex)
         {
             tiles[newIndex].SetPiece(tiles[oldIndex].GetPieceInTile());
@@ -927,6 +951,7 @@ namespace HexBaronCS
             }
             return line;
         }
+        
 
         private string CreateEvenLine(bool firstEvenLine, ref int listPositionOfTile)
         {
@@ -944,6 +969,52 @@ namespace HexBaronCS
             else
             {
                 line += GetPieceTypeInTile(listPositionOfTile) + @"\__/" + Environment.NewLine;
+            }
+            return line;
+        }
+        private string CreateOddLineIndeces(ref int listPositionOfTile)
+        {
+            string line = "";
+            for (var count = 1; count <= size / 2; count++)
+            {
+                if (count > 1 & count < size / 2)
+                {
+                    line += @"\__/";
+                    listPositionOfTile += 1;
+                    line += string.Format("{0,-2}", listPositionOfTile);
+                }
+                else if (count == 1)
+                {
+                    line += @" \__/" + string.Format("{0,-2}", listPositionOfTile);
+                }
+            }
+            line += @"\__/";
+            listPositionOfTile += 1;
+            if (listPositionOfTile < tiles.Count())
+            {
+                line += string.Format("{0,-2}", listPositionOfTile) + @"\" + Environment.NewLine;
+            }
+            else
+            {
+                line += @"\" + Environment.NewLine;
+            }
+            return line;
+        }
+        private string CreateEvenLineIndeces(bool firstEvenLine, ref int listPositionOfTile)
+        {
+            string line = " /" + string.Format("{0,-2}", listPositionOfTile);
+            for (var count = 1; count <= size / 2 - 1; count++)
+            {
+                listPositionOfTile += 1;
+                line += @"\__/" + string.Format("{0,-2}", listPositionOfTile);
+            }
+            if (firstEvenLine)
+            {
+                line += @"\__" + Environment.NewLine;
+            }
+            else
+            {
+                line += @"\__/" + Environment.NewLine;
             }
             return line;
         }
